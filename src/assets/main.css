@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Righteous-Regular";
+}
+
+@font-face {
+  font-family: "Righteous-Regular";
+  src: url("./fonts/Righteous-Regular.woff");
+}
