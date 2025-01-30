@@ -1,6 +1,6 @@
 <template>
-  <nav class="flex flex-col md:flex-row justify-between items-center px-4 md:px-6 py-4">
-    <div class="flex flex-col md:flex-row items-center px-4 rounded-full py-2 gap-4 md:gap-8 w-full md:w-auto shadow-md">
+  <nav class="flex flex-col md:flex-row justify-between items-center py-4 container mx-auto">
+    <div class="flex flex-col md:flex-row items-center px-4 rounded-full py-2 gap-4 md:gap-8 w-full md:w-auto shadow-md bg-white">
       <div class="flex">
         <div class="relative w-6 h-6">
           <div class="absolute inset-1 bg-emerald-500 rounded-full"></div>
