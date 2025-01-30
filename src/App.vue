@@ -1,11 +1,10 @@
 <script setup lang="ts">
+import { RouterView } from 'vue-router'
 
 </script>
 
 <template>
-  <div class="text-red-400">
-    salam
-  </div>
+  <RouterView />
 </template>
 
 <style scoped>
