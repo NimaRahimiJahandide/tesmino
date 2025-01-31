@@ -7,7 +7,7 @@ import OurCourses from "@/components/OurCourses.vue"
 
 <template>
   <div class="w-full">
-    <div class="bg-gray-100">
+    <div class="bg-[#f0f5f9]">
       <NavbarComponent />
       <header>
         <HeroSection />
