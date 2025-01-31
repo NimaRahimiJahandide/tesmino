@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection.vue'
 import KnowleducationSection from "@/components/KnowleducationSection.vue"
 import OurCourses from "@/components/OurCourses.vue"
 import ContactUs from '@/components/ContactUs.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 </script>
 
 <template>
@@ -19,5 +20,8 @@ import ContactUs from '@/components/ContactUs.vue';
       <OurCourses />
       <ContactUs />
     </main>
+    <footer>
+      <FooterComponent/>
+    </footer>
   </div>
 </template>
