@@ -44,7 +44,7 @@ const handItems = ref<HandItem[]>([
       <div class="relative mb-4">
         <h2 class="text-2xl md:text-3xl text-gray-800 font-Righteous font-thin">Choose Knowleducation over
           <span class="relative">
-            <span class="absolute -right-10 -top-9 -rotate-[30deg] text-emerald-500">ALL</span>
+            <span class="absolute -right-10 -top-9 -rotate-[30deg] text-[#34d399]">ALL</span>
             <span class="parentheses"></span>
           </span> 
           others...!
