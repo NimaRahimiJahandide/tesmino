@@ -3,6 +3,7 @@ import NavbarComponent from '@/components/common/navbarComponent.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import KnowleducationSection from "@/components/KnowleducationSection.vue"
 import OurCourses from "@/components/OurCourses.vue"
+import ContactUs from '@/components/ContactUs.vue';
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import OurCourses from "@/components/OurCourses.vue"
     <main>
       <KnowleducationSection/>
       <OurCourses />
+      <ContactUs />
     </main>
   </div>
 </template>

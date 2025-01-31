@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
-{
+*{
   box-sizing: border-box;
 }
 
-/* body {
-  font-family: "Righteous-Regular";
-  font-weight: 100;
-} */
+body {
+  background: #f8fafc;
+}
 
 html {
   line-height: 1.5;
