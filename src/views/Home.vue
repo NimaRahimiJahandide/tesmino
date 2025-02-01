@@ -9,12 +9,8 @@ import FooterComponent from '@/components/common/FooterComponent.vue';
 
 <template>
   <div class="w-full">
-    <div class="bg-[#f0f5f9]">
-      <NavbarComponent />
-      <header>
-        <HeroSection />
-      </header>
-    </div>
+    <NavbarComponent/>
+    <HeroSection />
     <main>
       <KnowleducationSection/>
       <OurCourses />
