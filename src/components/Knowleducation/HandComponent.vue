@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-white relative rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow duration-300 w-full md:w-[280px]">
+  <div class="bg-white relative rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow duration-300 w-full md:w-[280px] group">
     <div class="absolute top-2 right-10 text-gray-200 text-4xl font-bold opacity-50 pointer-events-none rotate-45 z-[1]">
       {{ watermark }}
     </div>
@@ -17,7 +17,7 @@ defineProps<{
       <div class="flex justify-center items-center relative">
         <div class="bg-yellow-50 rounded-full p-3 w-16 h-16 flex justify-center items-center"></div>
         <img :src="image" :alt="title" 
-             class="w-10 md:w-12 h-10 md:h-12 object-contain scale-150 absolute bottom-6" />
+             class="w-10 md:w-12 h-10 md:h-12 object-contain scale-200 absolute bottom-6 transition-transform duration-300 group-hover:-rotate-12" />
       </div>
       <div class="z-[1]">
         <h3 class="text-gray-800 text-base md:text-lg font-Righteous font-thin z-10">{{title}}</h3>
