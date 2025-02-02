@@ -69,7 +69,7 @@ watch(message, (newVal) => {
 });
 </script>
 <template>
-  <section class="container mx-auto pb-10">
+  <section class="max-w-[1248px] mx-auto px-6 pb-10">
     <h2 class="text-xl md:text-2xl font-Righteous font-thin mb-6 md:mb-8 text-center md:text-left">Need any help...?
     </h2>
     <div class="flex flex-col md:flex-row gap-8 p-6 md:p-8 shadow-sm rounded-xl">

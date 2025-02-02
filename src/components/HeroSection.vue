@@ -52,8 +52,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="bg-[#f0f5f9] pt-16">
-    <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lggap-0 mb-12 lg:mb-20 container mx-auto pb-10 px-4 sm:px-0">
+  <header class="bg-[#f0f5f9] pt-24">
+    <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lggap-0 mb-12 lg:mb-20 max-w-[1248px] mx-auto px-6 pb-10">
       <div class="lg:max-w-xl text-center lg:text-left">
         <h1 class="text-3xl lg:text-4xl font-Righteous relative font-medium mb-4 text-[#475569]">
           Learn EDGE Cases
@@ -67,7 +67,7 @@ onUnmounted(() => {
           molestiae quas vel sint commodi.</p>
         <div class="relative flex items-center w-full max-w-2xl mx-auto">
           <input type="text" placeholder="What do you want to learn?"
-            class="w-full px-6 py-3 text-base bg-white rounded-full shadow-sm border border-neutral-100 placeholder-neutral-400 outline-none focus:ring-2 focus:ring-[#34d399] focus:border-transparent transition-all duration-200" />
+            class="w-full px-6 py-3 text-base bg-white rounded-full  whitespace-nowrap pr-28 shadow-sm border border-neutral-100 placeholder-neutral-400 outline-none focus:ring-2 focus:ring-[#34d399] focus:border-transparent transition-all duration-200" />
           <button
             class="absolute cursor-pointer right-2 bg-[#34d399] text-white px-6 py-2 rounded-full hover:bg-emerald-600 transform hover:scale-105 transition-all duration-200">
             search </button>

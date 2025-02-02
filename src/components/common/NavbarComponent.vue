@@ -8,7 +8,7 @@ const pupilPosition = ref({ x: 0, y: 0 });
 const handleMouseMove = (event: MouseEvent) => {
   if (eyeContainer.value) {
     const rect = eyeContainer.value.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
+    const centerX = rect.left + rect.width / 2
     const centerY = rect.top + rect.height / 2;
 
     const mouseX = event.clientX - centerX;
@@ -43,56 +43,36 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="bg-[#f0f5f9] relative">
+  <div class="bg-[#f0f5f9]">
     <div class="w-full h-2 bg-[#34d399]"></div>
-    <nav class="justify-between items-center  container mx-auto px-4 sm:px-0 overflow-visible">
-      <div
-        class="sm:flex hidden items-center justify-between px-4 rounded-full py-4 gap-4 lg:gap-8 shadow-lg bg-white sticky top-5 z-50 transition-all duration-300" :class="store.isOurCoursesVisible ? ' w-[90%]' : ' w-[90%] lg:w-auto'">
-        <div class="flex gap-2 items-center">
-          <div class="relative w-6 h-6">
-            <div class="absolute inset-1 bg-[#34d399] rounded-full"></div>
-            <div class="absolute inset-0 bg-[#34d399] rounded-full"></div>
-            <div class="absolute inset-1 bg-white rounded-full flex items-center justify-center" ref="eyeContainer">
-              <div class="w-2 h-2 bg-[#475569] relative rounded-full flex justify-center items-center"
-                :style="pupilStyle"></div>
+    <div class="fixed top-0 left-0 right-0 z-50 px-6">
+      <nav class="max-w-[1248px] mx-auto pt-6">
+        <div
+          class="items-center flex justify-between px-4 rounded-full py-4 gap-4 lg:gap-8 shadow-lg bg-white transition-all duration-300"
+          :class="store.isOurCoursesVisible ? 'max-w-[1248px] mx-auto' : 'w-full lg:w-fit'"
+        >
+          <div class="flex gap-2 items-center">
+            <div class="relative w-6 h-6">
+              <div class="absolute inset-1 bg-[#34d399] rounded-full"></div>
+              <div class="absolute inset-0 bg-[#34d399] rounded-full"></div>
+              <div class="absolute inset-1 bg-white rounded-full flex items-center justify-center" ref="eyeContainer">
+                <div class="w-2 h-2 bg-[#475569] relative rounded-full flex justify-center items-center"
+                  :style="pupilStyle"></div>
+              </div>
             </div>
+            <b class="font-Righteous font-thin sm:text-lg text-base text-[#475569]">Knowleducation</b>
           </div>
-          <b class="font-Righteous font-thin text-lg text-[#475569]">Knowleducation</b>
-        </div>
-        <div class="flex gap-6 items-center text-sm font-sans text-gray-400">
-          <a href="#" class="hover:text-[#34d399] transition-colors">Course</a>
-          <a href="#" class="hover:text-[#34d399] transition-colors">Contact Us</a>
-          <a href="#" class="hover:text-[#34d399] transition-colors">Lorem</a>
-          <button
-            class="w-full lg:w-auto bg-[#34d399] text-white px-6 py-1 cursor-pointer rounded-full hover:bg-emerald-600 transition-colors">Contact
-            Us</button>
-        </div>
-      </div>
-      <!-- start hamburger menu -->
-      <div
-        class="sm:hidden flex items-center justify-between  rounded-full p-4 gap-4 lg:gap-8 w-[90%] mx-auto shadow-lg bg-white sticky top-5 z-50">
-        <div class="flex gap-2 items-center">
-          <div class="relative w-6 h-6">
-            <div class="absolute inset-1 bg-[#34d399] rounded-full"></div>
-            <div class="absolute inset-0 bg-[#34d399] rounded-full"></div>
-            <div class="absolute inset-1 bg-white rounded-full flex items-center justify-center" ref="eyeContainer">
-              <div class="w-2 h-2 bg-[#475569] relative rounded-full flex justify-center items-center"
-                :style="pupilStyle"></div>
-            </div>
+          <div class="flex gap-6 items-center justify-end text-sm font-sans text-gray-400 w-full">
+            <a href="#" class="hover:text-[#34d399] transition-colors sm:flex hidden">Course</a>
+            <a href="#" class="hover:text-[#34d399] transition-colors sm:flex hidden">Contact Us</a>
+            <a href="#" class="hover:text-[#34d399] transition-colors sm:flex hidden">Lorem</a>
+            <button
+              class="bg-[#34d399] text-white sm:px-6 px-3 py-1 cursor-pointer rounded-full hover:bg-emerald-600 transition-colors w-auto">Contact
+              Us</button>
           </div>
-          <b class="font-Righteous font-thin text-lg text-[#475569]">Knowleducation</b>
         </div>
-        <div class="flex gap-6 items-center text-sm font-sans text-gray-400">
-          <button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <path fill="#34d399"
-                d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <!-- end hamburger menu -->
-    </nav>
+      </nav>
+    </div>
   </div>
 </template>
 

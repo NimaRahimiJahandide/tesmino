@@ -35,7 +35,7 @@ const handItems = ref<HandItem[]>([
 </script>
 
 <template>
-  <section class="flex flex-col lg:flex-row items-center gap-4 lg:gap-8 rounded-lg container mx-auto px-4 sm:px-0">
+  <section class="flex flex-col lg:flex-row items-center gap-4 lg:gap-8 rounded-lg max-w-[1248px] mx-auto px-6">
     <div class="flex flex-col gap-5 lg:gap-7 w-full lg:w-auto">
       <HandComponent v-for="(hand, i) in handItems" :key="i" :title="hand.title" :description="hand.description"
         :image="hand.image" :watermark="hand.watermark" />
