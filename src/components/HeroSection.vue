@@ -52,13 +52,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="bg-[#f0f5f9] pt-10">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 mb-12 md:mb-20 container mx-auto pb-10">
-      <div class="max-w-xl text-center md:text-left">
-        <h1 class="text-3xl md:text-4xl font-Righteous relative font-medium mb-4 text-[#475569]">
+  <header class="bg-[#f0f5f9] pt-16">
+    <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lggap-0 mb-12 lg:mb-20 container mx-auto pb-10 px-4 sm:px-0">
+      <div class="lg:max-w-xl text-center lg:text-left">
+        <h1 class="text-3xl lg:text-4xl font-Righteous relative font-medium mb-4 text-[#475569]">
           Learn EDGE Cases
           <div
-            className="h-3 w-28 mt-1 -bottom-2 left-24 bg-gradient-to-r from-red-400 via-yellow-400 to-green-400 rounded-full absolute"
+            className="h-3 w-28 mt-1 -bottom-2 lg:left-24 left-[42%] bg-gradient-to-r from-red-400 via-yellow-400 to-green-400 rounded-full absolute"
             style="clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0% 100%);"></div>
         </h1>
         <p class="text-gray-400 mb-6 text-justify leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -73,7 +73,7 @@ onUnmounted(() => {
             search </button>
         </div>
       </div>
-      <div class="relative w-64 h-64 md:w-72 md:h-72" >
+      <div class="relative w-64 h-64 lg:w-72 lg:h-72" >
         <div class="absolute inset-0 bg-[#34d399] rounded-full"></div>
         <div class="absolute inset-0 bg-[#34d399] rounded-full"></div>
         <div class="absolute inset-16 bg-white rounded-full flex items-center justify-center" ref="eyeContainerHero">

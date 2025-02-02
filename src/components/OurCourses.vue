@@ -31,7 +31,7 @@ onMounted(async () => {
   <section class="my-12 md:my-20 bg-[#f0f5f9] py-10">
     <div class="container mx-auto">
       <h2 class="text-xl md:text-2xl mb-6 md:mb-8 text-center md:text-left font-Righteous font-thin">Our Courses</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4">
         <template v-if="loading">
           <CourseItemSkeleton v-for="item in 6" :key="item"/>
         </template>

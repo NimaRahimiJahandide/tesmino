@@ -75,7 +75,7 @@ watch(message, (newVal) => {
     <div class="flex flex-col md:flex-row gap-8 p-6 md:p-8 shadow-sm rounded-xl">
       <div class="flex-1">
         <form class="space-y-4" @submit.prevent="submitForm">
-          <div class="flex gap-5">
+          <div class="flex flex-col sm:flex-row gap-5">
             <div class="w-full">
               <div class="flex gap-3 items-center">
                 <span class="text-[#d6d3dc]">Full Name</span>
@@ -101,7 +101,7 @@ watch(message, (newVal) => {
               <p v-if="errors.message" class="text-red-400 text-sm">{{ errors.message }}</p>
             </div>
             <textarea ref="messageInput" v-model="message" @keydown="handleKeyDown($event, submitButton)"
-              class="w-full px-4 py-2 border resize-none border-gray-200 rounded-lg focus:outline-none focus:border-[#34d399] h-32"
+              class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#34d399] h-32"
               :class="errors.message ? 'border-red-400' : ''"></textarea>
 
           </div>
@@ -110,7 +110,7 @@ watch(message, (newVal) => {
             :class="Object.keys(errors).length > 0 ? 'cursor-not-allowed' : ''">Send</button>
         </form>
       </div>
-      <div class="w-full md:w-72 h-48 md:h-auto bg-yellow-50 rounded-xl flex items-center justify-center">
+      <div class="md:flex hidden md:w-72 h-48 md:h-auto bg-yellow-50 rounded-xl items-center justify-center">
         <img class="rotate-180 p-14" src="/icons/call-icon.svg" alt="call-icon">
       </div>
     </div>

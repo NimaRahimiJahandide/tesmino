@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-white relative rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow duration-300 w-full md:w-[280px] group">
+  <div class="bg-white relative rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow duration-300 w-full lg:w-[280px] group">
     <div class="absolute top-2 right-10 text-gray-200 text-4xl font-bold opacity-50 pointer-events-none rotate-45 z-[1]">
       {{ watermark }}
     </div>
