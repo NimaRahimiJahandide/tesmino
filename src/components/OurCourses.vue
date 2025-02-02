@@ -3,40 +3,28 @@ import CourseItem from "./Courses/CourseItem.vue";
 import CourseItemSkeleton from "./Courses/CourseItemSkeleton.vue";
 
 import { ref, onMounted } from "vue";
-
+import { makeServer } from "@/server.js";
 interface CoursesItem {
+  id: number;
   description: string;
 }
 
-const loading = ref(true); // Add loading state
+const loading = ref(true);
 
 
 const courses = ref<CoursesItem[]>([]);
 
-onMounted(() => {
-  setTimeout(() => {
-    courses.value = [
-      {
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab culpa veniam cumque temporibus quia? Harum iure facilis quaerat expedita. Nulla nesciunt obcaecati explicabo consequatur in et natus eum reprehenderit tempora.",
-      },
-      {
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab culpa veniam cumque temporibus quia? Harum iure facilis quaerat expedita. Nulla nesciunt obcaecati explicabo consequatur in et natus eum reprehenderit tempora.",
-      },
-      {
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab culpa veniam cumque temporibus quia? Harum iure facilis quaerat expedita. Nulla nesciunt obcaecati explicabo consequatur in et natus eum reprehenderit tempora.",
-      },
-      {
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab culpa veniam cumque temporibus quia? Harum iure facilis quaerat expedita. Nulla nesciunt obcaecati explicabo consequatur in et natus eum reprehenderit tempora.",
-      },
-      {
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab culpa veniam cumque temporibus quia? Harum iure facilis quaerat expedita. Nulla nesciunt obcaecati explicabo consequatur in et natus eum reprehenderit tempora.",
-      },
-      {
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab culpa veniam cumque temporibus quia? Harum iure facilis quaerat expedita. Nulla nesciunt obcaecati explicabo consequatur in et natus eum reprehenderit tempora.",
-      },
-    ];
-    loading.value = false; 
-  }, 2000);
+onMounted(async () => {
+  makeServer();
+  try {
+    const response = await fetch('/api/courses');
+    const data = await response.json();
+    courses.value = data.courses;
+  } catch (error) {
+    console.error('Error fetching courses:', error);
+  } finally {
+    loading.value = false;
+  }
 });
 </script>
 <template>
@@ -48,7 +36,7 @@ onMounted(() => {
           <CourseItemSkeleton v-for="item in 6" :key="item"/>
         </template>
         <template v-else>
-          <CourseItem v-for="(course, index) in courses" :key="index" :description="course.description" />
+          <CourseItem v-for="(course, index) in courses" :key="course.id" :description="course.description" />
         </template>
       </div>
     </div>
