@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { navbarStore } from '@/stores/navbarStore';
 
+const store = navbarStore();
 const eyeContainer = ref<HTMLElement | null>(null);
 const pupilPosition = ref({ x: 0, y: 0 });
 const handleMouseMove = (event: MouseEvent) => {
@@ -41,11 +43,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="bg-[#f0f5f9]">
+  <div class="bg-[#f0f5f9] relative">
     <div class="w-full h-2 bg-[#34d399]"></div>
-    <nav class="justify-between items-center  container mx-auto px-4 sm:px-0">
+    <nav class="justify-between items-center  container mx-auto px-4 sm:px-0 overflow-visible">
       <div
-        class="sm:flex hidden items-center justify-between px-4 rounded-full py-4 gap-4 lg:gap-8 w-[90%] lg:w-auto shadow-lg bg-white fixed top-5 z-50">
+        class="sm:flex hidden items-center justify-between px-4 rounded-full py-4 gap-4 lg:gap-8 shadow-lg bg-white sticky top-5 z-50 transition-all duration-300" :class="store.isOurCoursesVisible ? ' w-[90%]' : ' w-[90%] lg:w-auto'">
         <div class="flex gap-2 items-center">
           <div class="relative w-6 h-6">
             <div class="absolute inset-1 bg-[#34d399] rounded-full"></div>
@@ -68,7 +70,7 @@ onUnmounted(() => {
       </div>
       <!-- start hamburger menu -->
       <div
-        class="sm:hidden flex items-center justify-between  rounded-full p-4 gap-4 lg:gap-8 w-[90%] mx-auto shadow-lg bg-white fixed top-5 z-50">
+        class="sm:hidden flex items-center justify-between  rounded-full p-4 gap-4 lg:gap-8 w-[90%] mx-auto shadow-lg bg-white sticky top-5 z-50">
         <div class="flex gap-2 items-center">
           <div class="relative w-6 h-6">
             <div class="absolute inset-1 bg-[#34d399] rounded-full"></div>
