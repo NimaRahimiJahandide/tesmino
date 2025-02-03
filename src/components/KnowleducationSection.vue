@@ -35,23 +35,26 @@ const handItems = ref<HandItem[]>([
 </script>
 
 <template>
-  <section class="flex flex-col md:flex-row items-center gap-4 md:gap-8 rounded-lg container mx-auto">
-    <div class="flex flex-col gap-4 md:gap-6 w-full md:w-auto">
+  <section class="flex flex-col lg:flex-row items-center gap-4 lg:gap-8 rounded-lg max-w-[1248px] mx-auto px-6">
+    <div class="flex flex-col gap-5 lg:gap-7 w-full lg:w-auto">
       <HandComponent v-for="(hand, i) in handItems" :key="i" :title="hand.title" :description="hand.description"
         :image="hand.image" :watermark="hand.watermark" />
     </div>
-    <div class="flex-1 mt-6 md:mt-0">
+    <div class="flex-1 mt-6 lg:mt-0">
       <div class="relative mb-4">
-        <h2 class="text-2xl md:text-3xl text-gray-800 font-Righteous font-thin">Choose Knowleducation over
+        <h2 class="text-2xl lg:text-3xl text-gray-800 font-Righteous font-thin hidden sm:flex">Choose Knowleducation over&nbsp;
           <span class="relative">
-            <span class="absolute -right-10 -top-9 -rotate-[30deg] text-emerald-500">ALL</span>
+            <span class="absolute -right-10 -top-9 -rotate-[30deg] text-primary">ALL</span>
             <span class="parentheses"></span>
           </span> 
           others...!
-
+        </h2>
+        <h2 class="text-2xl lg:text-3xl text-gray-800 font-Righteous font-thin sm:hidden">Choose Knowleducation over
+            <span class="text-primary">ALL</span>
+          others...!
         </h2>
       </div>
-      <p class="text-gray-400 text-sm md:text-base leading-relaxed"> Lorem ipsum dolor sit amet consectetur
+      <p class="text-gray-400 text-sm lg:text-base leading-relaxed"> Lorem ipsum dolor sit amet consectetur
         adipisicing elit. Adipisci minus dolores architecto animi maiores voluptatibus quo culpa commodi sunt beatae
         dicta veniam, vel fuga odio, quaerat, inventore amet ab sit. Lorem ipsum dolor sit amet consectetur
         adipisicing elit. Adipisci minus dolores architecto animi maiores voluptatibus quo culpa commodi sunt beatae

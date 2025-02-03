@@ -8,25 +8,6 @@ body {
   background: #f8fafc;
 }
 
-html {
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  font-family:
-    Open Sans,
-    ui-sans-serif,
-    system-ui,
-    sans-serif,
-    Apple Color Emoji,
-    Segoe UI Emoji,
-    Segoe UI Symbol,
-    Noto Color Emoji;
-  font-feature-settings: normal;
-  font-variation-settings: normal;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  -webkit-tap-highlight-color: transparent;
-}
-
 @font-face {
   font-family: "Righteous-Regular";
   src: url("./fonts/Righteous-Regular.woff");
@@ -34,4 +15,10 @@ html {
 
 @theme{
   --font-Righteous: "Righteous-Regular";
+  --color-primary: #34d399; 
+  --color-secondary: #475569; 
+  --color-footer-border: #32cd95; 
+  --color-footer-bg: #0f172a; 
+  --color-light-grey: #d6d3dc; 
 }
+
