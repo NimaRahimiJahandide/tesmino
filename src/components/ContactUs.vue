@@ -5,9 +5,9 @@ const fullName = ref("");
 const email = ref("");
 const message = ref("");
 
-const emailInput = ref(null);
-const messageInput = ref(null);
-const submitButton = ref(null);
+const emailInput = ref<HTMLElement | null>(null);
+const messageInput = ref<HTMLElement | null>(null);
+const submitButton = ref<HTMLElement | null>(null);
 
 const errors = ref<{ fullName?: string; email?: string; message?: string }>({});
 
@@ -78,35 +78,35 @@ watch(message, (newVal) => {
           <div class="flex flex-col sm:flex-row gap-5">
             <div class="w-full">
               <div class="flex gap-3 items-center">
-                <span class="text-[#d6d3dc]">Full Name</span>
+                <span class="text-light-grey">Full Name</span>
                 <p v-if="errors.fullName" class="text-red-400 text-sm">{{ errors.fullName }}</p>
               </div>
-              <input v-model="fullName" type="text"
-                class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#34d399]"
+              <input v-model="fullName" type="text" aria-label="Full Name"
+                class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
                 @keydown="handleKeyDown($event, emailInput)" :class="errors.fullName ? 'border-red-400 ' : ''" />
             </div>
             <div class="w-full">
               <div class="flex gap-3 items-center">
-                <span class="text-[#d6d3dc]">Email</span>
+                <span class="text-light-grey">Email</span>
                 <p v-if="errors.email" class="text-red-400 text-sm">{{ errors.email }}</p>
               </div>
-              <input ref="emailInput" v-model="email" type="email" @keydown="handleKeyDown($event, messageInput)"
-                class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#34d399]"
+              <input ref="emailInput" aria-label="Email" v-model="email" type="email" @keydown="handleKeyDown($event, messageInput)"
+                class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
                 :class="errors.email ? 'border-red-400' : ''" />
             </div>
           </div>
           <div>
             <div class="flex gap-3 items-center">
-              <span class="text-[#d6d3dc]">Message</span>
+              <span class="text-light-grey">Message</span>
               <p v-if="errors.message" class="text-red-400 text-sm">{{ errors.message }}</p>
             </div>
-            <textarea ref="messageInput" v-model="message" @keydown="handleKeyDown($event, submitButton)"
-              class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#34d399] h-32"
+            <textarea ref="messageInput" v-model="message" @keydown="handleKeyDown($event, submitButton)" aria-label="Message"
+              class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary h-32"
               :class="errors.message ? 'border-red-400' : ''"></textarea>
 
           </div>
           <button ref="submitButton" :disabled="Object.keys(errors).length > 0"
-            class="w-full md:w-auto bg-[#34d399] text-white px-8 py-3 rounded-full hover:bg-emerald-600 transition-colors"
+            class="w-full md:w-auto bg-primary text-white px-8 py-3 rounded-full hover:bg-emerald-600 transition-colors"
             :class="Object.keys(errors).length > 0 ? 'cursor-not-allowed' : ''">Send</button>
         </form>
       </div>

@@ -32,10 +32,10 @@ onMounted(() => {
     <HeroSection />
     <main>
       <KnowleducationSection/>
-      <div ref="navbarFullPage">
+      <section ref="navbarFullPage">
         <OurCourses/>
         <ContactUs />
-      </div>
+      </section>
     </main>
     <footer>
       <FooterComponent/>

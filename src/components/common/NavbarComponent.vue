@@ -5,6 +5,7 @@ import { navbarStore } from '@/stores/navbarStore';
 const store = navbarStore();
 const eyeContainer = ref<HTMLElement | null>(null);
 const pupilPosition = ref({ x: 0, y: 0 });
+
 const handleMouseMove = (event: MouseEvent) => {
   if (eyeContainer.value) {
     const rect = eyeContainer.value.getBoundingClientRect();
@@ -44,7 +45,7 @@ onUnmounted(() => {
 
 <template>
   <div class="bg-[#f0f5f9]">
-    <div class="w-full h-2 bg-[#34d399]"></div>
+    <div class="w-full h-2 bg-primary"></div>
     <div class="fixed top-0 left-0 right-0 z-50 px-6">
       <nav class="max-w-[1248px] mx-auto pt-6">
         <div
@@ -53,21 +54,21 @@ onUnmounted(() => {
         >
           <div class="flex gap-2 items-center">
             <div class="relative w-6 h-6">
-              <div class="absolute inset-1 bg-[#34d399] rounded-full"></div>
-              <div class="absolute inset-0 bg-[#34d399] rounded-full"></div>
+              <div class="absolute inset-1 bg-primary rounded-full"></div>
+              <div class="absolute inset-0 bg-primary rounded-full"></div>
               <div class="absolute inset-1 bg-white rounded-full flex items-center justify-center" ref="eyeContainer">
-                <div class="w-2 h-2 bg-[#475569] relative rounded-full flex justify-center items-center"
+                <div class="w-2 h-2 bg-secondary relative rounded-full flex justify-center items-center"
                   :style="pupilStyle"></div>
               </div>
             </div>
-            <b class="font-Righteous font-thin sm:text-lg text-base text-[#475569]">Knowleducation</b>
+            <b class="font-Righteous font-thin sm:text-lg text-base text-secondary">Knowleducation</b>
           </div>
           <div class="flex gap-6 items-center justify-end text-sm font-sans text-gray-400 w-full">
-            <a href="#" class="hover:text-[#34d399] transition-colors sm:flex hidden">Course</a>
-            <a href="#" class="hover:text-[#34d399] transition-colors sm:flex hidden">Contact Us</a>
-            <a href="#" class="hover:text-[#34d399] transition-colors sm:flex hidden">Lorem</a>
-            <button
-              class="bg-[#34d399] text-white sm:px-6 px-3 py-1 cursor-pointer rounded-full hover:bg-emerald-600 transition-colors w-auto">Contact
+            <a href="#" aria-label="Course" class="hover:text-primary transition-colors sm:flex hidden">Course</a>
+            <a href="#" aria-label="Contact Us" class="hover:text-primary transition-colors sm:flex hidden">Contact Us</a>
+            <a href="#" aria-label="Lorem" class="hover:text-primary transition-colors sm:flex hidden">Lorem</a>
+            <button aria-label="Contact Us"
+              class="bg-primary text-white sm:px-6 px-3 py-1 cursor-pointer rounded-full hover:bg-emerald-600 transition-colors w-auto">Contact
               Us</button>
           </div>
         </div>
